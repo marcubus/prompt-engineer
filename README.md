@@ -63,6 +63,7 @@ prompt-engineer/
   gemini.md                         Gemini mechanics
   deepseek.md                       DeepSeek mechanics
   qwen.md                           Qwen mechanics
+  agents/openai.yaml                OpenAI and Codex interface manifest
   prompt-engineer-flow.excalidraw   editable diagram source
   prompt-engineer-flow.png          rendered diagram
 ```

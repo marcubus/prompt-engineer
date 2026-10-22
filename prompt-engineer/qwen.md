@@ -82,7 +82,7 @@ Qwen2.5 commonly opens with "Sure, here is..." or restates the task. Add: "Begin
 Images require a vision variant — Qwen2.5-VL or Qwen3-VL — not the text Qwen models. These read images, documents, and video, and can return bounding boxes and point coordinates for elements they locate.
 
 - Target the VL variant explicitly when an attachment is involved; a text Qwen model will invent the contents.
-- Apply the shared multimodal framework (shared KB §6): extract first, reason second.
+- Apply the shared multimodal framework: extract first, reason second.
 - For video, state the unit of output — transcript, timestamped summary, or per-scene analysis.
 
 ### Function calling

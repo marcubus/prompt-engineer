@@ -95,7 +95,7 @@ V3/V4 can open with a restatement ("Certainly, here is..."). Add: "Begin your re
 
 ### Images
 
-The DeepSeek-V3/V4 chat models and the R1 series are text-only. For image or document tasks, target a vision model in the DeepSeek-VL family instead, and apply the shared multimodal framework (shared KB §6). Do not ask a text DeepSeek model to read an attachment — it will invent the contents.
+The DeepSeek-V3/V4 chat models and the R1 series are text-only. For image or document tasks, target a vision model in the DeepSeek-VL family instead, and apply the shared multimodal framework. Do not ask a text DeepSeek model to read an attachment — it will invent the contents.
 
 ### Function calling
 

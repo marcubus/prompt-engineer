@@ -186,7 +186,7 @@ GPT models process text as tokens. Some formatting choices are more token-effici
 GPT-4o and GPT-4.1 are vision-capable. In the API, an image is passed as an `image_url` content part with a `detail` setting (`low`, `high`, or `auto`); in ChatGPT, images are attached directly.
 
 - Set `detail: "high"` when the task depends on small text, fine detail, or precise counts; leave `auto` otherwise.
-- Describe what to read before what to do: extraction first, reasoning second (shared KB §6).
+- Describe what to read before what to do: extraction first, reasoning second (see the multimodal framework).
 - For several images, label them and refer to them by label; GPT will otherwise mix them.
 - Say what to do when an element is unreadable rather than letting the model fill the gap.
 

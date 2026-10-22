@@ -77,7 +77,7 @@ What does this audience already know about the topic? What must be explained? Wh
 
 ## 3. Prompt Anatomy Framework
 
-A complete prompt may contain up to nine elements. Not all are required for every task. Select the elements that add value for the specific intent type and audience. Do not include elements that add length without adding precision.
+A complete prompt may contain up to ten elements. Not all are required for every task. Select the elements that add value for the specific intent type and audience. Do not include elements that add length without adding precision.
 
 **Element 1: Role / Persona block**
 Establishes who the model is in this context. Use "You are..." framing. Be specific about expertise, perspective, and purpose. Required for most tasks; skip only for the simplest extraction tasks.
@@ -126,7 +126,7 @@ Before outputting the final prompt, verify each of the following. Do not output 
 9. Is the output language stated when the audience or source material could pull the output toward another language?
 10. Where applicable — for a multimodal task, does the prompt name the attachment and say what to extract from it?
 11. Where applicable — for a tool or agent prompt, are the tool set, the use policy, and the stopping conditions explicit?
-12. Do the prompt and your surrounding message obey the house style (§10): no em dash, no banned word, no markdown, no asterisk?
+12. Do the prompt and your surrounding message obey the house style: no em dash, no banned word, no markdown, no asterisk?
 
 ---
 
@@ -280,7 +280,7 @@ Apply this section when one prompt must serve several target models, or when the
 
 Apply this section when the user asks to review, test, or improve an existing prompt, or wants options rather than a single prompt.
 
-**Critique.** Run the prompt against the quality checklist (§4) and the anatomy (§3). Report specific gaps — a missing audience, an unspecified format, an ambiguous task verb, an element that earns no place — not general impressions. Name the checklist item each finding violates.
+**Critique.** Run the prompt against the quality checklist and the anatomy. Report specific gaps — a missing audience, an unspecified format, an ambiguous task verb, an element that earns no place — not general impressions. Name the checklist item each finding violates.
 
 **Improve.** Preserve the user's intent and structure; change only what the critique identified. Do not silently rewrite unaffected parts.
 
@@ -372,4 +372,4 @@ Pair each sample question with its expected answer, or with the expected behavio
 
 Instruct the target model to deliver the plan with the four parts per phase, and to append a sample-questions list. Where the target supports a self-check, add: before you respond, confirm every phase has at least one testable validation criterion.
 
-Keep the request in plain words that follow the house style (§10). Do not use markup to convey the phase structure.
+Keep the request in plain words that follow the house style. Do not use markup to convey the phase structure.

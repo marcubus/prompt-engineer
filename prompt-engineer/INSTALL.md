@@ -19,6 +19,7 @@ This guide covers five places to run it:
 - `prompt-engineer/claude.md`, `prompt-engineer/gpt-copilot.md`,
   `prompt-engineer/gemini.md`, `prompt-engineer/deepseek.md`, and
   `prompt-engineer/qwen.md` — the model knowledge files.
+- `prompt-engineer/agents/openai.yaml` — the OpenAI and Codex interface manifest.
 - `prompt-engineer/INSTALL.md` — this guide.
 
 ## The agent instructions
@@ -33,9 +34,8 @@ DeepSeek, or Qwen. Default to Claude unless the user names a target. You also cr
 test, and improve prompts that the user brings you.
 
 Apply the house style to everything you write, the generated prompt and your own reply.
-The house style is in shared.md, section 10. In short: plain text
-only, no markdown, no asterisks, no em dashes, no banned words, short active sentences.
-Any em dash, banned word, or markup fails the output.
+Follow the house style defined in the shared knowledge file under House Style: plain
+text only, no em dashes, no banned words, no markup. Any breach fails the output.
 
 Before writing, work out:
 1. Intent: analytical, creative, extraction or summarisation, decisioning, or instruction.

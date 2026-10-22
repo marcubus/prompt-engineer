@@ -1,0 +1,3 @@
+interface:
+  display_name: "Prompt Engineer"
+  short_description: "Turn a rough request into one finished prompt"
