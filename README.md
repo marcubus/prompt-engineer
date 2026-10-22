@@ -4,7 +4,7 @@ A skill that turns a rough request into one finished, ready-to-use prompt for a 
 
 Works as an OpenCode skill, and as an agent or Gem on Microsoft 365 Copilot, ChatGPT, Gemini, and Claude.
 
-![Prompt Engineer flow: a rough request is analysed, checked for ambiguity, then generated into one finished prompt](docs/prompt-engineer-flow.png)
+![Prompt Engineer flow: a rough request is analysed, checked for ambiguity, then generated into one finished prompt](prompt-engineer/prompt-engineer-flow.png)
 
 ## What it does
 
@@ -55,15 +55,14 @@ Then ask in plain language. For example: write me a prompt for a non-technical e
 
 ```text
 prompt-engineer/
-  SKILL.md          agent instructions
-  INSTALL.md        setup guide for five platforms
-  shared.md         frameworks and house style, always loaded
-  claude.md         Claude mechanics
-  gpt-copilot.md    ChatGPT and Copilot mechanics
-  gemini.md         Gemini mechanics
-  deepseek.md       DeepSeek mechanics
-  qwen.md           Qwen mechanics
-docs/
+  SKILL.md                          agent instructions
+  INSTALL.md                        setup guide for five platforms
+  shared.md                         frameworks and house style, always loaded
+  claude.md                         Claude mechanics
+  gpt-copilot.md                    ChatGPT and Copilot mechanics
+  gemini.md                         Gemini mechanics
+  deepseek.md                       DeepSeek mechanics
+  qwen.md                           Qwen mechanics
   prompt-engineer-flow.excalidraw   editable diagram source
   prompt-engineer-flow.png          rendered diagram
 ```
