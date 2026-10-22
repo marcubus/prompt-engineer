@@ -16,11 +16,11 @@ The house style governs every prompt you generate and every message you write ba
 Read these files from this skill's folder before generating. Load `shared.md` plus the model file matching the target model, and load several model files when the target is more than one model.
 
 - `shared.md`: always. Intent taxonomy, audience profiling, prompt anatomy, quality checklist, universal techniques, multimodal, tool and agent, multi-model, critique and variants, house style, and phased validation with sample questions.
-- `CLAUDE.md`: target is Claude, the default.
-- `GPT-COPILOT.md`: target is ChatGPT or Microsoft Copilot.
-- `GEMINI.md`: target is Gemini.
-- `DEEPSEEK.md`: target is DeepSeek, the V3 and V4 chat models and the R1 reasoning series.
-- `QWEN.md`: target is Qwen, the Qwen2.5 and Qwen3 families.
+- `MODEL-CLAUDE.md`: target is Claude, the default.
+- `MODEL-GPT-COPILOT.md`: target is ChatGPT or Microsoft Copilot.
+- `MODEL-GEMINI.md`: target is Gemini.
+- `MODEL-DEEPSEEK.md`: target is DeepSeek, the V3 and V4 chat models and the R1 reasoning series.
+- `MODEL-QWEN.md`: target is Qwen, the Qwen2.5 and Qwen3 families.
 
 ## Model detection
 

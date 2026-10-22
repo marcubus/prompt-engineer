@@ -34,7 +34,7 @@ Setup runs in five places.
 
 - `prompt-engineer/SKILL.md`, the agent instructions.
 - `prompt-engineer/shared.md`, the shared knowledge file. Carries the house style and the frameworks.
-- `prompt-engineer/CLAUDE.md`, `prompt-engineer/GPT-COPILOT.md`, `prompt-engineer/GEMINI.md`, `prompt-engineer/DEEPSEEK.md`, and `prompt-engineer/QWEN.md`, the model knowledge files.
+- `prompt-engineer/MODEL-CLAUDE.md`, `prompt-engineer/MODEL-GPT-COPILOT.md`, `prompt-engineer/MODEL-GEMINI.md`, `prompt-engineer/MODEL-DEEPSEEK.md`, and `prompt-engineer/MODEL-QWEN.md`, the model knowledge files.
 - `prompt-engineer/agents/openai.yaml`, the OpenAI and Codex interface manifest.
 
 ### Agent instructions
@@ -198,11 +198,11 @@ Runs as an OpenCode skill, and as an agent or Gem on Microsoft 365 Copilot, Chat
 
 | Target | Knowledge file |
 | --- | --- |
-| Claude, the default | `prompt-engineer/CLAUDE.md` |
-| ChatGPT, Microsoft Copilot | `prompt-engineer/GPT-COPILOT.md` |
-| Gemini | `prompt-engineer/GEMINI.md` |
-| DeepSeek | `prompt-engineer/DEEPSEEK.md` |
-| Qwen | `prompt-engineer/QWEN.md` |
+| Claude, the default | `prompt-engineer/MODEL-CLAUDE.md` |
+| ChatGPT, Microsoft Copilot | `prompt-engineer/MODEL-GPT-COPILOT.md` |
+| Gemini | `prompt-engineer/MODEL-GEMINI.md` |
+| DeepSeek | `prompt-engineer/MODEL-DEEPSEEK.md` |
+| Qwen | `prompt-engineer/MODEL-QWEN.md` |
 
 `prompt-engineer/shared.md` always loads. The file carries the frameworks and the house style. The model files add the mechanics each family needs.
 
@@ -222,11 +222,11 @@ House style governs the generated prompt and every reply. Any em dash, banned wo
 prompt-engineer/
   SKILL.md                          agent instructions
   shared.md                         frameworks and house style, always loaded
-  CLAUDE.md                         Claude mechanics
-  GPT-COPILOT.md                    ChatGPT and Copilot mechanics
-  GEMINI.md                         Gemini mechanics
-  DEEPSEEK.md                       DeepSeek mechanics
-  QWEN.md                           Qwen mechanics
+  MODEL-CLAUDE.md                   Claude mechanics
+  MODEL-GPT-COPILOT.md              ChatGPT and Copilot mechanics
+  MODEL-GEMINI.md                   Gemini mechanics
+  MODEL-DEEPSEEK.md                 DeepSeek mechanics
+  MODEL-QWEN.md                     Qwen mechanics
   agents/openai.yaml                OpenAI and Codex interface manifest
   prompt-engineer-flow.excalidraw   editable diagram source
   prompt-engineer-flow.png          rendered diagram
