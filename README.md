@@ -33,9 +33,11 @@ Setup runs in five places.
 ### Files
 
 - `prompt-engineer/SKILL.md`, the agent instructions.
-- `prompt-engineer/shared.md`, the shared knowledge file. Carries the house style and the frameworks.
+- `prompt-engineer/SHARED.md`, the shared knowledge file. Carries the house style and the frameworks.
 - `prompt-engineer/MODEL-CLAUDE.md`, `prompt-engineer/MODEL-GPT-COPILOT.md`, `prompt-engineer/MODEL-GEMINI.md`, `prompt-engineer/MODEL-DEEPSEEK.md`, and `prompt-engineer/MODEL-QWEN.md`, the model knowledge files.
 - `prompt-engineer/agents/openai.yaml`, the OpenAI and Codex interface manifest.
+
+Install needs the `prompt-engineer` folder alone. Keep the files together inside the folder. The `docs` folder holds the flow diagram for reference and forms no part of the install.
 
 ### Agent instructions
 
@@ -178,7 +180,7 @@ Check the reply against three things:
 
 ## prompt-engineer
 
-![Prompt Engineer flow: a rough request is analysed, checked for ambiguity, then generated into one finished prompt](prompt-engineer/prompt-engineer-flow.png)
+![Prompt Engineer flow: a rough request is analysed, checked for ambiguity, then generated into one finished prompt](docs/prompt-engineer-flow.png)
 
 Turns a rough request into one finished, ready-to-use prompt for a chosen AI model. Ask for a prompt, and get a single usable result rather than a draft. Give an existing prompt, and the skill critiques, tests, or improves the prompt against best practice.
 
@@ -204,7 +206,7 @@ Runs as an OpenCode skill, and as an agent or Gem on Microsoft 365 Copilot, Chat
 | DeepSeek | `prompt-engineer/MODEL-DEEPSEEK.md` |
 | Qwen | `prompt-engineer/MODEL-QWEN.md` |
 
-`prompt-engineer/shared.md` always loads. The file carries the frameworks and the house style. The model files add the mechanics each family needs.
+`prompt-engineer/SHARED.md` always loads. The file carries the frameworks and the house style. The model files add the mechanics each family needs.
 
 ### How the skill works
 
@@ -221,13 +223,15 @@ House style governs the generated prompt and every reply. Any em dash, banned wo
 ```text
 prompt-engineer/
   SKILL.md                          agent instructions
-  shared.md                         frameworks and house style, always loaded
+  SHARED.md                         frameworks and house style, always loaded
   MODEL-CLAUDE.md                   Claude mechanics
   MODEL-GPT-COPILOT.md              ChatGPT and Copilot mechanics
   MODEL-GEMINI.md                   Gemini mechanics
   MODEL-DEEPSEEK.md                 DeepSeek mechanics
   MODEL-QWEN.md                     Qwen mechanics
   agents/openai.yaml                OpenAI and Codex interface manifest
+
+docs/
   prompt-engineer-flow.excalidraw   editable diagram source
   prompt-engineer-flow.png          rendered diagram
 ```
