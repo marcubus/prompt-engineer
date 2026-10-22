@@ -29,7 +29,7 @@ GPT models are susceptible to recency bias: content appearing later in the promp
 
 ## 2. Section Separators and Syntax
 
-GPT models respond well to clear visual separation between prompt sections. The `---` separator is idiomatic and effective. Markdown and XML both work; `---` with uppercase section labels is a common and reliable convention.
+GPT models respond well to clear visual separation between prompt sections. The `---` separator is idiomatic and effective. Markdown and XML both work. `---` with uppercase section labels is a common and reliable convention.
 
 **Effective separator pattern:**
 ```
@@ -173,9 +173,9 @@ GPT models process text as tokens. Some formatting choices are more token-effici
 
 **Practical guidance:**
 - Tables are more token-efficient than repeating field labels in prose for structured data.
-- Avoid consecutive whitespace; it consumes tokens without adding meaning.
-- Spell out month names rather than using numeric date formats; numeric dates tokenise less efficiently.
-- Keep prompt structure tight; unnecessary repetition within the prompt consumes context window.
+- Avoid consecutive whitespace, which consumes tokens without adding meaning.
+- Spell out month names rather than using numeric date formats. Numeric dates tokenise less efficiently.
+- Keep prompt structure tight. Unnecessary repetition within the prompt consumes context window.
 
 ---
 
@@ -183,11 +183,11 @@ GPT models process text as tokens. Some formatting choices are more token-effici
 
 ### Images
 
-GPT-4o and GPT-4.1 are vision-capable. In the API, an image is passed as an `image_url` content part with a `detail` setting (`low`, `high`, or `auto`); in ChatGPT, images are attached directly.
+GPT-4o and GPT-4.1 are vision-capable. In the API, an image is passed as an `image_url` content part with a `detail` setting (`low`, `high`, or `auto`). In ChatGPT, images are attached directly.
 
-- Set `detail: "high"` when the task depends on small text, fine detail, or precise counts; leave `auto` otherwise.
+- Set `detail: "high"` when the task depends on small text, fine detail, or precise counts. Leave `auto` otherwise.
 - Describe what to read before what to do: extraction first, reasoning second (see the multimodal framework).
-- For several images, label them and refer to them by label; GPT will otherwise mix them.
+- For several images, label them and refer to them by label. GPT will otherwise mix them.
 - Say what to do when an element is unreadable rather than letting the model fill the gap.
 
 ### Function calling
@@ -195,12 +195,12 @@ GPT-4o and GPT-4.1 are vision-capable. In the API, an image is passed as an `ima
 GPT supports function calling with JSON Schema definitions passed in `tools`.
 
 - Each function needs a clear `name`, a `description` that states when to call it, and a parameter schema.
-- Set `strict: true` on the schema to guarantee the arguments validate; without it, the model can emit malformed or invented fields.
+- Set `strict: true` on the schema to guarantee the arguments validate. Without strict mode, the model emits malformed or invented fields.
 - Use `tool_choice` (`auto`, `required`, or a named function) to control whether and which tool is called.
-- Keep the tool set small and non-overlapping; describe each tool's trigger conditions rather than relying on its name.
-- The model returns a `tool_calls` object with JSON arguments — the caller executes it, not the model.
+- Keep the tool set small and non-overlapping. Describe each tool's trigger conditions rather than relying on the name.
+- The model returns a `tool_calls` object with JSON arguments. The caller executes the call, not the model.
 
-Microsoft 365 Copilot does not expose raw function calling; it uses connectors and plugins configured in Copilot Studio. Apply the Copilot addendum below for those surfaces.
+Microsoft 365 Copilot does not expose raw function calling. Copilot uses connectors and plugins configured in Copilot Studio. Apply the Copilot addendum below for those surfaces.
 
 ---
 
@@ -243,4 +243,4 @@ Different Copilot surfaces have different effective behaviours:
 
 ### C5. Copilot System Prompts (Copilot Studio Bots)
 
-When building a Copilot Studio bot, the system prompt is configured in the bot's topic or knowledge settings rather than in the user message. Apply the GPT system message guidance from section 6 above. Keep the system prompt focused; Copilot Studio bots perform better with clear, constrained system instructions than with broad open-ended ones.
+When building a Copilot Studio bot, the system prompt is configured in the bot's topic or knowledge settings rather than in the user message. Apply the GPT system message guidance from section 6 above. Keep the system prompt focused. Copilot Studio bots perform better with clear, constrained system instructions than with broad open-ended ones.

@@ -10,15 +10,15 @@ This document covers techniques specific to Alibaba's Qwen models: the Qwen2.5 s
 
 Qwen3 runs in two modes:
 
-- **Thinking** — reasons before answering; use it for maths, code, logic, and multi-step analysis.
-- **Non-thinking** — answers fast; use it for chat, extraction, formatting, and simple instruction.
+- **Thinking**: reasons before answering. Use this mode for maths, code, logic, and multi-step analysis.
+- **Non-thinking**: answers fast. Use this mode for chat, extraction, formatting, and simple instruction.
 
 Control the mode:
 
 - **Soft switch in the message:** append `/think` to force reasoning, or `/no_think` to force the fast path.
-- **API / chat template:** set `enable_thinking` (true or false); with `enable_thinking=False` the model answers directly.
+- **API / chat template:** set `enable_thinking` (true or false). With `enable_thinking=False` the model answers directly.
 
-Qwen3-Thinking models cannot disable thinking. Qwen2.5 has no thinking mode — treat it as non-thinking only. Match the mode to the task: pair thinking with hard problems, `/no_think` with simple or latency-sensitive ones.
+Qwen3-Thinking models cannot disable thinking. Qwen2.5 has no thinking mode, so treat Qwen2.5 as non-thinking only. Match the mode to the task: pair thinking with hard problems, `/no_think` with simple or latency-sensitive ones.
 
 ---
 
@@ -29,13 +29,13 @@ Set at the API, not in the prompt, but they change results. Qwen3's documented b
 - **Thinking mode:** temperature 0.6, top_p 0.95, top_k 20, min_p 0.
 - **Non-thinking mode:** temperature 0.7, top_p 0.8, top_k 20, presence_penalty 1.5.
 
-Do not use greedy decoding with Qwen3 — it can cause repetition and degraded output.
+Do not use greedy decoding with Qwen3. Greedy decoding risks repetition and degraded output.
 
 ---
 
-## 3. Use the chat template; keep roles clean
+## 3. Use the chat template, keep roles clean
 
-Qwen-Instruct models are trained with a specific chat template. When prompting through an API or a runtime that applies the template (vLLM, llama.cpp, LM Studio, Ollama), let it — do not hand-insert the special tokens. System, user, and assistant roles all work: keep system for standing role and format, user for the task. Breaking the template manually degrades output.
+Qwen-Instruct models are trained with a specific chat template. When prompting through an API or a runtime that applies the template (vLLM, llama.cpp, LM Studio, Ollama), let the runtime apply the template. Do not hand-insert the special tokens. System, user, and assistant roles all work: keep system for standing role and format, user for the task. Breaking the template manually degrades output.
 
 ---
 
@@ -51,7 +51,7 @@ Qwen is trained across 100+ languages and is strong in Chinese. With mixed-langu
 
 ---
 
-## 6. Long context — question after the material
+## 6. Long context: question after the material
 
 Qwen2.5 and Qwen3 carry long context (32K native, extensible toward 128K). Put large source material before the question and place the task instruction at the end, so the request is freshest at generation.
 
@@ -59,19 +59,19 @@ Qwen2.5 and Qwen3 carry long context (32K native, extensible toward 128K). Put l
 
 ## 7. Structured output and tables
 
-Qwen handles structured data well. Give input tables as markdown, and specify the output schema exactly — columns, JSON keys, enum values. For strict JSON, say "Return only valid JSON, with no surrounding text."
+Qwen handles structured data well. Give input tables as markdown, and specify the output schema exactly: columns, JSON keys, enum values. For strict JSON, say "Return only valid JSON, with no surrounding text."
 
 ---
 
 ## 8. Coding
 
-Qwen3-Coder is the code specialist; Qwen3-Instruct also codes well. Specify language, version, framework, and expected style. For debugging, give the failing input, the expected output, and the actual output.
+Qwen3-Coder is the code specialist. Qwen3-Instruct also codes well. Specify language, version, framework, and expected style. For debugging, give the failing input, the expected output, and the actual output.
 
 ---
 
 ## 9. Anti-preamble
 
-Qwen2.5 commonly opens with "Sure, here is..." or restates the task. Add: "Begin your response directly with the output. Do not restate the task." In thinking mode the reasoning trace is separate; keep the instruction aimed at the final answer.
+Qwen2.5 commonly opens with "Sure, here is..." or restates the task. Add: "Begin your response directly with the output. Do not restate the task." In thinking mode the reasoning trace is separate. Keep the instruction aimed at the final answer.
 
 ---
 
@@ -79,18 +79,18 @@ Qwen2.5 commonly opens with "Sure, here is..." or restates the task. Add: "Begin
 
 ### Images and video
 
-Images require a vision variant — Qwen2.5-VL or Qwen3-VL — not the text Qwen models. These read images, documents, and video, and can return bounding boxes and point coordinates for elements they locate.
+Images require a vision variant (Qwen2.5-VL or Qwen3-VL), not the text Qwen models. These read images, documents, and video, and can return bounding boxes and point coordinates for elements they locate.
 
-- Target the VL variant explicitly when an attachment is involved; a text Qwen model will invent the contents.
+- Target the VL variant explicitly when an attachment is involved. A text Qwen model will invent the contents.
 - Apply the shared multimodal framework: extract first, reason second.
-- For video, state the unit of output — transcript, timestamped summary, or per-scene analysis.
+- For video, state the unit of output: transcript, timestamped summary, or per-scene analysis.
 
 ### Function calling
 
 Qwen2.5 and Qwen3 support tool use and JSON output, exposed through an OpenAI-compatible `tools` interface and the Qwen-Agent framework. Qwen3-Coder is tuned for agentic coding loops.
 
 - Define each tool with a name, a description stating when to call it, and typed parameters.
-- Qwen can use tools in both thinking and non-thinking modes; in thinking mode it may reason before emitting the call.
+- Qwen can use tools in both thinking and non-thinking modes. In thinking mode the model may reason before emitting the call.
 - Constrain parameters with enums where the domain is fixed, and keep the tool set non-overlapping.
 
 ---
@@ -105,11 +105,11 @@ You are [specific role].
 
 [Source material, if any.]
 
-Task: [Direct instruction — the problem to solve and the standard it must meet.]
+Task: [Direct instruction: the problem to solve and the standard it must meet.]
 
 Output format: [Structure, length, format.]
 
-Answer in [language]. Begin the final answer directly; no preamble.
+Answer in [language]. Begin the final answer directly, with no preamble.
 ```
 
 **Fast target (append the soft switch):**

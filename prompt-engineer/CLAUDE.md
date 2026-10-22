@@ -17,12 +17,12 @@ Claude is trained on large volumes of structured web content and parses XML tags
 - When the output should follow a specific structure
 
 **Recommended tag conventions:**
-- `<instructions>` — the core task directive
-- `<context>` — background information or motivation
-- `<document>` or `<content>` — source material the model should work from
-- `<example>` — few-shot examples
-- `<output_format>` — specification of the desired response structure
-- `<audience>` — audience profile information
+- `<instructions>`: the core task directive
+- `<context>`: background information or motivation
+- `<document>` or `<content>`: source material the model should work from
+- `<example>`: few-shot examples
+- `<output_format>`: specification of the desired response structure
+- `<audience>`: audience profile information
 
 **Nesting:** Tags can be nested where logical. For example, wrap multiple examples in `<examples>` with individual `<example>` tags inside.
 
@@ -37,7 +37,7 @@ Claude is trained on large volumes of structured web content and parses XML tags
 In a one-shot prompt (no system prompt), the role must be established inline at the opening of the prompt. Claude responds well to specific, grounded role framing.
 
 **Effective role framing:**
-- Be specific about expertise, not just title. "You are an experienced executive communications writer who specialises in translating complex technical decisions into clear business narratives for senior leadership" is more effective than "You are a writer."
+- Be specific about expertise, not the title alone. "You are an experienced executive communications writer who specialises in translating complex technical decisions into clear business narratives for senior leadership" is more effective than "You are a writer."
 - Include the purpose of the role in context. "Your job in this task is to..." anchors the role to the specific output.
 - Do not assign fictional or implausible roles. Claude responds better to grounded professional roles than to exaggerated personas.
 
@@ -71,7 +71,7 @@ Claude responds better to instructions that specify what to do rather than what 
 
 **Prefer positive framing:**
 - Instead of "don't use jargon" use "write in plain English accessible to a non-technical reader"
-- Instead of "don't be verbose" use "write concisely; target 150 words or fewer"
+- Instead of "don't be verbose" use "write concisely, target 150 words or fewer"
 - Instead of "don't start with a summary" use "begin directly with the first recommendation"
 
 **When negative constraints are appropriate:**
@@ -153,15 +153,15 @@ Claude 3, 3.5, and 4 are vision-capable and read text, charts, screenshots, and 
 
 - Pass images as content blocks (base64 or URL in the API, or attachments in the app), separate from the text.
 - Place the image before the text that refers to it, so the reference resolves against content already in context.
-- For multiple images, label each one ("Image 1: current dashboard; Image 2: target") and refer to them by label throughout.
+- For multiple images, label each one ("Image 1: current dashboard, Image 2: target") and refer to them by label throughout.
 - Wrap each attachment in its own tag when there are several: `<image_1>…</image_1>`, `<document_1>…</document_1>`.
 
 ### Tool use
 
-Claude has native tool use. Define each tool with a `name`, a `description`, and a JSON Schema `input_schema`; the model then emits a structured tool call instead of guessing.
+Claude has native tool use. Define each tool with a `name`, a `description`, and a JSON Schema `input_schema`, and the model then emits a structured tool call instead of guessing.
 
-- Write the description as a decision rule — what the tool does, when to call it, and when not to.
-- State plainly that tools are available; Claude is conservative and may otherwise answer from memory.
+- Write the description as a decision rule: what the tool does, when to call the tool, and when not to.
+- State plainly that tools are available. Claude is conservative and might otherwise answer from memory.
 - Keep schemas strict and enums closed, so the model cannot emit invalid arguments.
 - Use `tool_choice` to force a specific tool when the decision is not the model's to make.
 
@@ -179,7 +179,7 @@ The audience for your output is [audience description: expertise level, relation
 
 [Core task instruction in direct, imperative language.]
 
-[Constraints — positive framing where possible.]
+[Constraints: positive framing where possible.]
 
 [Output format specification: structure, length, format.]
 
@@ -187,7 +187,7 @@ Tone and register: [specify].
 
 Begin your response directly with the output. Do not restate the task or include any preamble.
 
-Before submitting, verify that: [self-check criteria].
+Before submitting, verify: [self-check criteria].
 </instructions>
 
 <content>

@@ -156,7 +156,7 @@ When the target is Gemini within a specific Google Workspace application, the fo
 Best for drafting, rewriting, summarising, and expanding content within a document. Reference the specific document section where relevant. Use direct drafting instructions ("Write a new introduction paragraph for this document that...").
 
 **Gemini in Gmail:**
-Best for drafting replies, summarising email threads, and adjusting tone of existing drafts. Reference the specific email or thread explicitly. Keep prompts concise; Gmail Gemini is optimised for short, action-oriented tasks.
+Best for drafting replies, summarising email threads, and adjusting tone of existing drafts. Reference the specific email or thread explicitly. Keep prompts concise. Gmail Gemini is optimised for short, action-oriented tasks.
 
 **Gemini in Google Sheets:**
 Best for formula generation, data analysis, and table manipulation. Reference specific columns or ranges explicitly. Gemini can generate formulas from natural language descriptions of what the formula should calculate.
@@ -170,10 +170,10 @@ Best for meeting summaries, action item extraction, and follow-up email drafts a
 
 Gemini supports function calling: tools are declared (as `function_declarations`) and the model returns a structured call with arguments, which the caller executes.
 
-- Each declaration needs a `name`, a `description`, and typed parameters. Write the description as a decision rule — what the tool does and the conditions that trigger it.
-- Gemini can return several function calls at once and can chain calls across turns; state whether parallel calls are wanted.
+- Each declaration needs a `name`, a `description`, and typed parameters. Write the description as a decision rule: what the tool does and the conditions triggering the tool.
+- Gemini can return several function calls at once and can chain calls across turns. State whether parallel calls are wanted.
 - Use the system instruction field (section 8 above) to carry the standing tool-use policy, keeping the user prompt on the task.
-- Keep declarations few and non-overlapping; where the domain is fixed, constrain parameters with enums.
+- Keep declarations few and non-overlapping. Where the domain is fixed, constrain parameters with enums.
 - For image or document tools, state the modality explicitly and what should be extracted (see section 7).
 
 ---
