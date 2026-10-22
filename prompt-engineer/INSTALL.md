@@ -14,9 +14,11 @@ This guide covers five places to run it:
 ## What's in this pack
 
 - `prompt-engineer/SKILL.md` — the agent instructions.
-- `prompt-engineer/references/` — six knowledge files. The shared file carries the
-  house style. Five model files cover Claude, ChatGPT and Copilot, Gemini, DeepSeek,
-  and Qwen.
+- `prompt-engineer/shared.md` — the shared knowledge file, carrying the house style and
+  the frameworks.
+- `prompt-engineer/claude.md`, `prompt-engineer/gpt-copilot.md`,
+  `prompt-engineer/gemini.md`, `prompt-engineer/deepseek.md`, and
+  `prompt-engineer/qwen.md` — the model knowledge files.
 - `prompt-engineer/INSTALL.md` — this guide.
 
 ## The agent instructions
@@ -31,7 +33,7 @@ DeepSeek, or Qwen. Default to Claude unless the user names a target. You also cr
 test, and improve prompts that the user brings you.
 
 Apply the house style to everything you write, the generated prompt and your own reply.
-The house style is in prompt-engineering-kb-shared.md, section 10. In short: plain text
+The house style is in shared.md, section 10. In short: plain text
 only, no markdown, no asterisks, no em dashes, no banned words, short active sentences.
 Any em dash, banned word, or markup fails the output.
 
@@ -66,8 +68,8 @@ After delivering, stay in the conversation and treat follow-ups as refinements t
 same prompt, changing only what the user asked for.
 ```
 
-When a platform supports knowledge files, upload the six files from
-`prompt-engineer/references/`. When it does not, paste the shared file into the
+When a platform supports knowledge files, upload the six knowledge files from the
+skill folder. When it does not, paste the shared file into the
 knowledge or context area, or prepend it to a request.
 
 ---
@@ -79,7 +81,7 @@ OpenCode loads skills from disk. No account or app is needed.
 1. Copy the `prompt-engineer` folder into a skills directory:
    - Project scope: `<your-project>/.opencode/skills/prompt-engineer/`
    - Global scope: `~/.config/opencode/skills/prompt-engineer/`
-2. Keep the folder layout intact, so `SKILL.md` and `references/` stay together.
+2. Keep the folder layout intact, so `SKILL.md` and the knowledge files stay together.
 3. Start a new OpenCode session so it discovers the skill.
 4. Ask in plain language, for example: write me a prompt for a non-technical executive
    summary, targeting ChatGPT.
@@ -96,7 +98,7 @@ Regular Microsoft 365 Copilot Chat, not Copilot Studio.
 2. Choose Create an agent, or open the Agents area and pick New agent.
 3. Name it Prompt Engineer and give it a short description.
 4. Paste the agent instructions above into the Instructions box.
-5. Under Knowledge, add the six files from `prompt-engineer/references/`. Upload them
+5. Under Knowledge, add the six knowledge files. Upload them
    from OneDrive or SharePoint, since Copilot grounds agents on your Microsoft 365 content.
 6. Save, then open the agent from Copilot Chat and describe the prompt you want.
 
@@ -116,7 +118,7 @@ Two options. Custom GPTs support knowledge files. Custom instructions apply to e
 2. Switch to the Configure tab.
 3. Set the name to Prompt Engineer and add a short description.
 4. Paste the agent instructions above into the Instructions box.
-5. Under Knowledge, upload the six files from `prompt-engineer/references/`.
+5. Under Knowledge, upload the six knowledge files.
 6. Save, then choose who can use it. Open the GPT and describe the prompt you want.
 
 ### Custom instructions (no files)
@@ -138,7 +140,7 @@ Gems are Gemini's saved, reusable assistants.
 2. Choose New Gem.
 3. Name it Prompt Engineer and add a short description.
 4. Paste the agent instructions into the instructions field.
-5. Attach the six files from `prompt-engineer/references/` if your plan allows uploads.
+5. Attach the six knowledge files if your plan allows uploads.
 6. Save, then open the Gem and describe the prompt you want.
 
 Note: file attachments in Gems need a paid Google plan. Without uploads, paste the shared
@@ -153,7 +155,7 @@ Claude Projects hold instructions plus a project knowledge base.
 1. Open <https://claude.ai> and go to Projects.
 2. Choose New Project and name it Prompt Engineer.
 3. Open the project instructions and paste the agent instructions above.
-4. Add the six files from `prompt-engineer/references/` to the project knowledge.
+4. Add the six knowledge files to the project knowledge.
 5. Start a chat inside the project and describe the prompt you want.
 
 Alternative without a Project: open Settings, then Profile, and paste the agent

@@ -20,13 +20,13 @@ Works as an OpenCode skill, and as an agent or Gem on Microsoft 365 Copilot, Cha
 
 | Target | Knowledge file |
 |---|---|
-| Claude (default) | `references/prompt-engineering-kb-claude.md` |
-| ChatGPT, Microsoft Copilot | `references/prompt-engineering-kb-gpt-copilot.md` |
-| Gemini | `references/prompt-engineering-kb-gemini.md` |
-| DeepSeek | `references/prompt-engineering-kb-deepseek.md` |
-| Qwen | `references/prompt-engineering-kb-qwen.md` |
+| Claude (default) | `prompt-engineer/claude.md` |
+| ChatGPT, Microsoft Copilot | `prompt-engineer/gpt-copilot.md` |
+| Gemini | `prompt-engineer/gemini.md` |
+| DeepSeek | `prompt-engineer/deepseek.md` |
+| Qwen | `prompt-engineer/qwen.md` |
 
-The shared file, `references/prompt-engineering-kb-shared.md`, always loads. It carries the frameworks and the house style. Model files add the mechanics each family needs.
+The shared file, `prompt-engineer/shared.md`, always loads. It carries the frameworks and the house style. Model files add the mechanics each family needs.
 
 ## How it works
 
@@ -57,7 +57,12 @@ Then ask in plain language. For example: write me a prompt for a non-technical e
 prompt-engineer/
   SKILL.md          agent instructions
   INSTALL.md        setup guide for five platforms
-  references/       shared file plus five model knowledge files
+  shared.md         frameworks and house style, always loaded
+  claude.md         Claude mechanics
+  gpt-copilot.md    ChatGPT and Copilot mechanics
+  gemini.md         Gemini mechanics
+  deepseek.md       DeepSeek mechanics
+  qwen.md           Qwen mechanics
 docs/
   prompt-engineer-flow.excalidraw   editable diagram source
   prompt-engineer-flow.png          rendered diagram

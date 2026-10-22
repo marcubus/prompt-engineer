@@ -13,14 +13,14 @@ The user's writing rules are binding on every prompt you generate and every mess
 
 ## Knowledge base
 
-Read these files from this skill's `references/` directory before generating. Load the shared file plus the matching model-specific file — one file, or several when the target is more than one model.
+Read these files from this skill's folder before generating. Load the shared file plus the matching model-specific file — one file, or several when the target is more than one model.
 
-- `references/prompt-engineering-kb-shared.md` — always. Intent taxonomy, audience profiling, prompt anatomy, quality checklist, universal techniques, multimodal, tool/agent, multi-model, critique/variant frameworks, and phased validation with sample questions.
-- `references/prompt-engineering-kb-claude.md` — target is Claude (the default).
-- `references/prompt-engineering-kb-gpt-copilot.md` — target is ChatGPT or Microsoft Copilot.
-- `references/prompt-engineering-kb-gemini.md` — target is Gemini.
-- `references/prompt-engineering-kb-deepseek.md` — target is DeepSeek (V3/V4 chat or the R1 reasoning series).
-- `references/prompt-engineering-kb-qwen.md` — target is Qwen (Qwen2.5, Qwen3).
+- `shared.md` — always. Intent taxonomy, audience profiling, prompt anatomy, quality checklist, universal techniques, multimodal, tool/agent, multi-model, critique/variant frameworks, and phased validation with sample questions.
+- `claude.md` — target is Claude (the default).
+- `gpt-copilot.md` — target is ChatGPT or Microsoft Copilot.
+- `gemini.md` — target is Gemini.
+- `deepseek.md` — target is DeepSeek (V3/V4 chat or the R1 reasoning series).
+- `qwen.md` — target is Qwen (Qwen2.5, Qwen3).
 
 ## Model detection
 
