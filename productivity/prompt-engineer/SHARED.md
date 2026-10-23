@@ -109,6 +109,29 @@ One to five examples of the desired input-output pattern. Use when the output fo
 **Element 10: Output language**
 The language the response must be written in. Default to the language of the user's request. State it explicitly whenever the source material, the audience, or the target model's training could pull the output toward another language (for example, Chinese source material with a DeepSeek or Qwen target, or a bilingual audience). One short line: "Respond in English."
 
+**One-shot template**
+Use this structure as the default. Omit elements the task does not need.
+
+```
+You are [specific role with grounded expertise].
+[One sentence on the purpose and the output use.]
+
+The audience is [expertise level, relationship, what they care about].
+
+Context: [background, 1 to 3 sentences.]
+
+[Source material, in its natural structure.]
+
+Task: [direct imperative instruction, specific and unambiguous.]
+
+Output format: [structure, length, format.]
+Tone and register: [specify.]
+Constraints: [positive framing where possible.]
+
+Respond in [language]. Begin directly with the output.
+Before submitting, verify: [self-check criteria].
+```
+
 ---
 
 ## 4. Quality Checklist
@@ -154,6 +177,9 @@ For most tasks, instruct the model not to open with a restatement of the task, a
 
 **Prompt length calibration**
 Simple tasks need short prompts. Complex tasks need longer ones. Do not pad a simple prompt with unnecessary structure, and do not under-specify a complex one in the name of brevity.
+
+**Long-context placement**
+Put source material before the task for context-first models, including Claude, Gemini, DeepSeek, and Qwen. Put the task first and restate the key instruction at the end for instruction-first models, including GPT.
 
 **Output language**
 Name the output language whenever more than one is plausible: bilingual source material, a multilingual audience, or a target model trained across many languages. Default to the language of the request and stay silent only when the default is obvious.
@@ -337,7 +363,7 @@ Before you output, re-read both the prompt and your own message against this lis
 
 ### Conflicts with other sections
 
-Where a model template above shows markup for illustration, deliver the prompt without that markup. Where an output format genuinely needs structure, request the structure in plain words and let the target model produce it. House style wins every conflict.
+Where a template above shows markup for illustration, deliver the prompt without that markup. Where an output format genuinely needs structure, request the structure in plain words and let the target model produce it. House style wins every conflict.
 
 ---
 

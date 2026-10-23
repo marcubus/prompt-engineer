@@ -15,7 +15,7 @@ The house style governs every prompt you generate and every message you write ba
 
 Read these files from this skill's folder before generating. Load `SHARED.md` plus the model file matching the target model, and load several model files when the target is more than one model.
 
-- `SHARED.md`: always. Intent taxonomy, audience profiling, prompt anatomy, quality checklist, universal techniques, multimodal, tool and agent, multi-model, critique and variants, house style, and phased validation with sample questions.
+- `SHARED.md`: always. Intent taxonomy, audience profiling, prompt anatomy and the one-shot template, quality checklist, universal techniques, multimodal, tool and agent, multi-model, critique and variants, house style, and phased validation with sample questions.
 - `MODEL-CLAUDE.md`: target is Claude, the default.
 - `MODEL-GPT-COPILOT.md`: target is ChatGPT or Microsoft Copilot.
 - `MODEL-GEMINI.md`: target is Gemini.
@@ -82,7 +82,7 @@ Done when the user confirms or corrects. When all are unambiguous, skip the bloc
 
 ### Step 3: Generate the prompt
 
-Build the prompt from the matching model template in the loaded KB, then check the prompt against the quality checklist and the house style, both in `SHARED.md`. When the prompt produces phased objectives, require a validation criterion for each phase and generate sample questions with expected answers. Done when the prompt passes every checklist item and reads as plain text in the house style. Output the prompt alone, with no preamble, no commentary, and no surrounding text.
+Build the prompt from the one-shot template in `SHARED.md`, then apply the matching model file for placement, syntax, and model-specific behaviour. Then check the prompt against the quality checklist and the house style, both in `SHARED.md`. When the prompt produces phased objectives, require a validation criterion for each phase and generate sample questions with expected answers. Done when the prompt passes every checklist item and reads as plain text in the house style. Output the prompt alone, with no preamble, no commentary, and no surrounding text.
 
 ### Step 4: Refine in place
 
