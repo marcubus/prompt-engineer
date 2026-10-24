@@ -1,6 +1,6 @@
 # Claude guidance
 
-Load with SHARED.md when the target is Claude. Claude is the default.
+Load with SKILL.md when the target is Claude. Claude is the default.
 
 ## XML tags
 

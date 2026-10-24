@@ -32,8 +32,7 @@ Setup runs in five places.
 
 ### Files
 
-- `productivity/prompt-engineer/SKILL.md`, the agent instructions.
-- `productivity/prompt-engineer/SHARED.md`, the shared knowledge file. Carries the house style and the frameworks.
+- `productivity/prompt-engineer/SKILL.md`, the agent instructions, frameworks, and style rules.
 - `productivity/prompt-engineer/MODEL-CLAUDE.md`, `productivity/prompt-engineer/MODEL-GPT-COPILOT.md`, `productivity/prompt-engineer/MODEL-GEMINI.md`, `productivity/prompt-engineer/MODEL-DEEPSEEK.md`, and `productivity/prompt-engineer/MODEL-QWEN.md`, the model knowledge files.
 - `productivity/prompt-engineer/agents/openai.yaml`, the OpenAI and Codex interface manifest.
 
@@ -43,7 +42,7 @@ Install needs the `prompt-engineer` folder alone. Keep the files together inside
 
 The agent instructions live in `productivity/prompt-engineer/SKILL.md`. Copy the body of that file, from the `# Prompt Engineer` heading down, into the platform instructions field. The front matter at the top is for OpenCode only and is not part of the pasted text.
 
-When the platform supports knowledge files, upload the six knowledge files from the skill folder. When the platform does not, paste the shared file into the knowledge or context area, or prepend the shared file to a request.
+When the platform supports knowledge files, upload the five model knowledge files from the skill folder. When the platform does not, paste the SKILL.md body and the matching model file into the knowledge or context area, or prepend both to a request.
 
 ### OpenCode
 
@@ -66,7 +65,7 @@ Regular Microsoft 365 Copilot Chat, not Copilot Studio.
 2. Choose Create an agent, or open the Agents area and pick New agent.
 3. Name the agent Prompt Engineer and give the agent a short description.
 4. Paste the SKILL.md body into the Instructions box.
-5. Under Knowledge, add the six knowledge files. Upload the files from OneDrive or SharePoint, since Copilot grounds agents on Microsoft 365 content.
+5. Under Knowledge, add the five model knowledge files. Upload the files from OneDrive or SharePoint, since Copilot grounds agents on Microsoft 365 content.
 6. Save, then open the agent from Copilot Chat and describe the prompt you want.
 
 If the tenant does not show the agent builder, use the no-setup path. Start a Copilot chat, paste the SKILL.md body, then add the request on the next line. Save the instructions for reuse.
@@ -81,7 +80,7 @@ Two options. Custom GPTs support knowledge files. Custom instructions apply to e
 2. Switch to the Configure tab.
 3. Set the name to Prompt Engineer and add a short description.
 4. Paste the SKILL.md body into the Instructions box.
-5. Under Knowledge, upload the six knowledge files.
+5. Under Knowledge, upload the five model knowledge files.
 6. Save, then set the access level for the GPT. Open the GPT and describe the prompt you want.
 
 #### Custom instructions, no files
@@ -90,7 +89,7 @@ Two options. Custom GPTs support knowledge files. Custom instructions apply to e
 2. Paste the SKILL.md body into the field about how ChatGPT should respond.
 3. Save. Start a new chat and describe the prompt you want.
 
-Note: custom instructions have a length limit. If the body does not fit, use the shared file section and trim the model list.
+Note: custom instructions have a length limit. If the body does not fit, paste the framework section and trim the model list.
 
 ### Gemini (Gems)
 
@@ -100,10 +99,10 @@ Gems are the saved, reusable assistants in Gemini.
 2. Choose New Gem.
 3. Name the Gem Prompt Engineer and add a short description.
 4. Paste the SKILL.md body into the instructions field.
-5. Attach the six knowledge files if the plan allows uploads.
+5. Attach the five model knowledge files if the plan allows uploads.
 6. Save, then open the Gem and describe the prompt you want.
 
-Note: file attachments in Gems need a paid Google plan. Without uploads, paste the shared file into the first message of a chat and keep the Gem open.
+Note: file attachments in Gems need a paid Google plan. Without uploads, paste the SKILL.md body into the first message of a chat and keep the Gem open.
 
 ### Claude
 
@@ -112,7 +111,7 @@ Claude Projects hold instructions plus a project knowledge base.
 1. Open <https://claude.ai> and go to Projects.
 2. Choose New Project and name the project Prompt Engineer.
 3. Open the project instructions and paste the SKILL.md body.
-4. Add the six knowledge files to the project knowledge.
+4. Add the five model knowledge files to the project knowledge.
 5. Start a chat inside the project and describe the prompt you want.
 
 Alternative without a Project: open Settings, then Profile, and paste the SKILL.md body into the custom instructions field. This applies to every chat and carries no knowledge files.
@@ -126,7 +125,7 @@ Send this request on any platform:
 Check the reply against three things:
 
 - The reply returns one finished prompt, with no preamble.
-- The reply follows the house style: plain text, no markdown, no em dashes.
+- The reply follows the style rules in SKILL.md: no em dashes, no banned words.
 - The reply names the target model, or defaults to Claude when you do not name one.
 
 ### Tips
@@ -155,15 +154,14 @@ Runs as an OpenCode skill, and as an agent or Gem on Microsoft 365 Copilot, Chat
 | DeepSeek | `productivity/prompt-engineer/MODEL-DEEPSEEK.md` |
 | Qwen | `productivity/prompt-engineer/MODEL-QWEN.md` |
 
-`productivity/prompt-engineer/SHARED.md` always loads. The file carries the frameworks and the house style. The model files add the mechanics each family needs.
+`productivity/prompt-engineer/SKILL.md` always loads. The file carries the frameworks and the style rules. The model files add the mechanics each family needs.
 
 ## Repository layout
 
 ```text
 productivity/
   prompt-engineer/
-    SKILL.md                        agent instructions
-    SHARED.md                       frameworks and house style, always loaded
+    SKILL.md                        agent instructions, frameworks, style rules
     MODEL-CLAUDE.md                 Claude mechanics
     MODEL-GPT-COPILOT.md            ChatGPT and Copilot mechanics
     MODEL-GEMINI.md                 Gemini mechanics

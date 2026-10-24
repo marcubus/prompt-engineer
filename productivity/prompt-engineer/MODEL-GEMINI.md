@@ -1,6 +1,6 @@
 # Gemini guidance
 
-Load with SHARED.md when the target is Gemini.
+Load with SKILL.md when the target is Gemini.
 
 ## Action verbs
 

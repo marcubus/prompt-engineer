@@ -1,6 +1,6 @@
 # Qwen guidance
 
-Load with SHARED.md when the target is Qwen.
+Load with SKILL.md when the target is Qwen.
 
 ## Thinking switch
 

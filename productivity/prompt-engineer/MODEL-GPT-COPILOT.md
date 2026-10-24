@@ -1,6 +1,6 @@
 # ChatGPT and Copilot guidance
 
-Load with SHARED.md when the target is ChatGPT or Microsoft 365 Copilot.
+Load with SKILL.md when the target is ChatGPT or Microsoft 365 Copilot.
 
 ## Recency bias
 

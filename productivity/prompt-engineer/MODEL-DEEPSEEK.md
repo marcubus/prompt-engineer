@@ -1,6 +1,6 @@
 # DeepSeek guidance
 
-Load with SHARED.md when the target is DeepSeek.
+Load with SKILL.md when the target is DeepSeek.
 
 DeepSeek has two families. The V3 and V4 chat models answer directly. The R1 reasoning models emit a reasoning block before the answer. Identify the family before writing.
 
@@ -34,7 +34,7 @@ V3 and V4 support JSON output and function calling. State the schema and add "Re
 
 ## Vision
 
-V3, V4, and R1 are text-only. For images, target DeepSeek-VL and apply the shared multimodal framework. A text DeepSeek model will invent the contents of an attachment.
+V3, V4, and R1 are text-only. For images, target DeepSeek-VL and apply the skill's multimodal framework. A text DeepSeek model will invent the contents of an attachment.
 
 ## Function calling
 
