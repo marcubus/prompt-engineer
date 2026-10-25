@@ -19,6 +19,8 @@ Banned words: can, may, just, that, very, really, literally, actually, certainly
 
 Review output. No em dashes.
 
+When you generate a prompt, carry these rules into the prompt as an explicit style constraint. The target model sees only the prompt, not this skill. Add a `Style:` line to the prompt with the compact rules. Default to the compact rules. Add the banned word list only when the user asks for exact style fidelity.
+
 ## Reference files
 
 Load the model file matching the target model before generating. Load several when the target is more than one model. The model files carry only model-specific deltas. The frameworks below carry the rest.
@@ -89,7 +91,7 @@ Done when the user confirms or corrects. When all are unambiguous, skip the bloc
 
 ### Step 3: Generate the prompt
 
-Build the prompt from the one-shot template below, then apply the matching model file for placement, syntax, and model-specific behaviour. Then check the prompt against the quality checklist below and the style rules above. For a phased plan, apply the phased objectives framework below. Done when the prompt passes every checklist item and follows the style rules. Output the prompt alone, with no preamble, no commentary, and no surrounding text.
+Build the prompt from the one-shot template below, including the style constraints. Apply the matching model file for placement, syntax, and model-specific behaviour. Check against the quality checklist below and the style rules above. Run a style pass on the prompt itself: remove every em dash, semicolon, banned word, triad, and rhetorical negation. Rhetorical negation includes "not X but Y", "rather than", and "instead of". Done when the prompt states its style rules and the scan finds none. For a phased plan, apply the phased objectives framework below. Output the prompt alone, with no preamble, no commentary, and no surrounding text.
 
 ### Step 4: Refine in place
 
@@ -172,7 +174,7 @@ What does this audience already know about the topic? What must be explained? Wh
 
 ## Prompt anatomy
 
-A complete prompt may contain up to ten elements. Not all are required for every task. Select the elements that add value for the specific intent type and audience. Do not include elements that add length without adding precision.
+A complete prompt may contain up to eleven elements. Not all are required for every task. Select the elements that add value for the specific intent type and audience. Do not include elements that add length without adding precision.
 
 **Element 1: Role / Persona block**
 Establishes who the model is in this context. Use "You are..." framing. Be specific about expertise, perspective, and purpose. Required for most tasks. Skip only for the simplest extraction tasks.
@@ -204,6 +206,9 @@ One to five examples of the desired input-output pattern. Use when the output fo
 **Element 10: Output language**
 The language the response must be written in. Default to the language of the user's request. State it explicitly whenever the source material, the audience, or the target model's training could pull the output toward another language (for example, Chinese source material with a DeepSeek or Qwen target, or a bilingual audience). One short line: "Respond in English."
 
+**Element 11: Style constraints**
+State the writing rules the target model must follow. Carry these rules into the prompt. At minimum: simple, clear words. Short sentences. Active voice. No em dashes. No semicolons. No rhetorical negation. No triads. Default to the compact rules. Add the banned word list only when the user asks for exact style fidelity. Include this element in every generated prompt.
+
 **One-shot template**
 Use this structure as the default. Omit elements the task does not need.
 
@@ -221,6 +226,7 @@ Task: [direct imperative instruction, specific and unambiguous.]
 
 Output format: [structure, length, format.]
 Tone and register: [specify.]
+Style: [simple words, short sentences, active voice, no em dashes, no semicolons, no rhetorical negation, no triads.]
 Constraints: [positive framing where possible.]
 
 Respond in [language]. Begin directly with the output.
@@ -244,7 +250,7 @@ Before outputting the final prompt, verify each of the following. Do not output 
 9. Is the output language stated when the audience or source material could pull the output toward another language?
 10. Where applicable, for a multimodal task, does the prompt name the attachment and say what to extract?
 11. Where applicable, for a tool or agent prompt, are the tool set, the use policy, and the stopping conditions explicit?
-12. Do the prompt and your surrounding message follow the style rules above?
+12. Does the prompt itself state the style rules for its output? Do the prompt and your surrounding message follow the style rules above?
 
 ---
 
